@@ -91,7 +91,7 @@
 
         <div class="mb-5">
           <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">
-            Repetir Passwor
+            Repetir Password
           </label>
           <input 
             type="password"
