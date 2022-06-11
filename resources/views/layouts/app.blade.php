@@ -16,7 +16,7 @@
 
           @auth
             <nav class="flex flex-col gap-4 md:flex-row items-center">
-              <a class="font-normal text-gray-600 text-sm" href="#">
+              <a class="font-normal text-gray-600 text-sm" href="{{ route('posts.index', auth()->user()->username) }}">
                 Hola:
                 <span class="font-bold">
                   {{ auth()->user()->username }}

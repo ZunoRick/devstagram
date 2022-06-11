@@ -11,6 +11,9 @@ class RegisterController extends Controller
 {
 	public function index()
 	{
+		if(auth()->check()){
+			return redirect()->route('posts.index', auth()->user()->username);
+		}
 		return view('auth.register');
 	}
 
@@ -47,6 +50,6 @@ class RegisterController extends Controller
 		auth()->attempt($request->only('email', 'password'));
 
 		//Redireccionar
-		return redirect()->route('posts.index');
+		return redirect()->route('posts.index', auth()->user()->username);
 	}
 }
