@@ -8,6 +8,7 @@ class LoginController extends Controller
 {
 	public function index()
 	{
+		// *Verifica que un usuario está autenticado
 		if(auth()->check()){
 			return redirect()->route('posts.index', auth()->user()->username);
 		}
