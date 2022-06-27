@@ -27,7 +27,9 @@
 
       @auth
         @if ($post->user_id === auth()->user()->id)
-          <form>
+          <form action="{{ route('posts.destroy', $post) }}" method="POST">
+            @method('DELETE')
+            @csrf
             <input 
               type="submit" 
               value="Eliminar Publicación"
@@ -60,7 +62,7 @@
                 id="comentario"
                 name="comentario"
                 placeholder="Agrega un Comentario"
-                class="border p-3 w-full rounded-lg @error('name')
+                class="border p-3 w-full rounded-lg @error('comentario')
                   border-red-500
                 @enderror"
               ></textarea>
