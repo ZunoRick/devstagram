@@ -39,7 +39,7 @@ class PerfilController extends Controller
 			}
 		}
 
-		if ($request->username !== auth()->user()->username) {
+		if ($request->username === auth()->user()->username) {
 			if (file_exists(public_path('uploads/' . auth()->user()->username . "/"))) {
 				rename (public_path('uploads/' . auth()->user()->username . "/"), public_path('uploads/' . $request->username . "/" ));
 			}
